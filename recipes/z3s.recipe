@@ -2,12 +2,12 @@
 # vim:fileencoding=utf-8
 from calibre.web.feeds.news import AutomaticNewsRecipe
 
-class Recipe_OSW(AutomaticNewsRecipe):
-    title          = 'OSW'
-    oldest_article = 7
+class recipe_z3s(AutomaticNewsRecipe):
+    title          = 'Z3S'
+    oldest_article = 3
     max_articles_per_feed = 100
     auto_cleanup   = True
 
     feeds          = [
-        ('RSS', 'https://www.osw.waw.pl/pl/rss.xml'),
+        ('RSS', 'https://zaufanatrzeciastrona.pl/feed'),
     ]
