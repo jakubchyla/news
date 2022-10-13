@@ -7,16 +7,16 @@ main()
                "exiting...\n"
     fi
     if [ -z "$MAIL_SERVER" ]; then
-        printf "MAIL_SERVER not specified, setting to default \"mail:25""\n"
         MAIL_SERVER="mail:25"
+        printf "MAIL_SERVER not specified, setting to default: $MAIL_SERVER\n"
     fi
     if [ -z "$RECIPE_DIR" ]; then
-        printf "RECIPE_DIR not specified, setting to default \"/news/recipes""\n"
-        RECIPE_DIR="/news/recipes"
+        RECIPE_DIR="$(dirname "$(realpath "$0")")/recipes"
+        printf "RECIPE_DIR not specified, setting to default: $RECIPE_DIR\n"
     fi
     if [ -z "$OUTPUT_DIR" ]; then
-        printf "OUTPUT_DIR not specified, setting to default \"/news_output""\n"
-        OUTPUT_DIR="/news_output"
+        OUTPUT_DIR="$(dirname "$(realpath "$0")")/output"
+        printf "OUTPUT_DIR not specified, setting to default: $OUTPUT_DIR\n"
     fi
     get_news
     send_news
